@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="display:flex;flex-direction:column;gap:clamp(28px,3.4vw,44px)">
+  <sc-if value="{{ hasVideo }}" hint-placeholder-val="{{ false }}">
+    <div style="background:#ffffff;border:1px solid #e8e0d3;border-radius:14px;overflow:hidden;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))">
+      <a href="{{ videoUrl }}" target="_blank" rel="noopener" style="position:relative;display:block;aspect-ratio:16/9;background-color:#e2e9dd;background-image:{{ thumbBg }};background-size:cover;background-position:center">
+        <span style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:rgba(255,255,255,0.94);display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 12 12" style="width:16px;height:16px;margin-left:3px"><path d="M2 1 L11 6 L2 11 Z" fill="#3f5a4a"></path></svg></span>
+        <sc-if value="{{ hasDuration }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;right:12px;bottom:12px;background:rgba(34,48,42,0.82);color:#ffffff;font-size:12.5px;font-weight:600;padding:4px 9px;border-radius:6px">{{ videoDuration }}</span></sc-if>
+      </a>
+      <div style="padding:clamp(20px,2.6vw,28px);display:flex;flex-direction:column;gap:10px;justify-content:center;min-width:0">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#9b9186">Vídeo</span>
+        <h3 style="font-family:Lora,serif;font-weight:500;font-size:clamp(19px,2vw,22px);line-height:1.3;margin:0;color:#22302a;text-wrap:pretty">{{ videoTitle }}</h3>
+        <a href="{{ videoUrl }}" target="_blank" rel="noopener" style="align-self:flex-start;margin-top:6px;background:#3f5a4a;color:#ffffff;padding:12px 22px;border-radius:8px;font-weight:700;font-size:14.5px;text-decoration:none" style-hover="background:#31463a">Assistir →</a>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ showNav }}" hint-placeholder-val="{{ true }}">
+  <div style="display:flex;flex-direction:column;gap:14px;border-top:1px solid #e2dacb;border-bottom:1px solid #e2dacb;padding:clamp(20px,2.4vw,28px) 0">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#b5646a">{{ navLabel }}</span>
+    <div style="display:flex;flex-wrap:wrap;gap:8px 0;align-items:baseline">
+      <sc-for list="{{ chapters }}" as="c" hint-placeholder-count="6">
+        <span style="display:flex;align-items:baseline">
+          <a href="#{{ c.id }}" onClick="{{ c.jump }}" style="font-family:Lora,serif;font-size:clamp(16.5px,1.6vw,18px);line-height:1.5;color:#2b4034;text-decoration:none" style-hover="color:#b5646a">{{ c.title }}</a>
+          <sc-if value="{{ c.notLast }}" hint-placeholder-val="{{ true }}"><span style="color:#c9bfae;padding:0 12px">·</span></sc-if>
+        </span>
+      </sc-for>
+    </div>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ prep }}" hint-placeholder-val="{{ true }}">
+    <div style="display:flex;flex-direction:column;gap:6px;border-left:2px solid #c4666f;padding:4px 0 4px 18px;max-width:64ch">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#b5646a">{{ prepLabel }}</span>
+      <span style="font-family:Lora,serif;font-style:italic;font-size:clamp(17px,1.7vw,19px);line-height:1.55;color:#3f4a44;text-wrap:pretty">{{ prepText }}</span>
+    </div>
+  </sc-if>
+
+  <sc-for list="{{ chapters }}" as="c" hint-placeholder-count="0">
+    <sc-if value="{{ c.hasContent }}" hint-placeholder-val="{{ false }}">
+      <section id="{{ c.id }}" style="display:flex;flex-direction:column;gap:22px;max-width:720px;width:100%;margin:0 auto;padding-top:clamp(12px,2vw,24px)">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.12em;color:#b5646a">{{ c.num }}</span>
+          <h2 style="font-family:Lora,serif;font-weight:500;font-size:clamp(27px,3.2vw,36px);line-height:1.15;margin:0;color:#22302a;text-wrap:balance">{{ c.title }}</h2>
+        </div>
+        <sc-if value="{{ c.hasIntro }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:0;font-family:Lora,serif;font-size:clamp(19px,2vw,22px);line-height:1.6;color:#2b4034;text-wrap:pretty">{{ c.intro }}</p>
+        </sc-if>
+        <sc-for list="{{ c.blocks }}" as="b" hint-placeholder-count="0">
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <sc-if value="{{ b.isText }}" hint-placeholder-val="{{ false }}">
+              <sc-for list="{{ b.paras }}" as="para" hint-placeholder-count="0">
+                <p style="margin:0;font-size:17.5px;line-height:1.9;color:#3f4a44;text-wrap:pretty">{{ para }}</p>
+              </sc-for>
+            </sc-if>
+            <sc-if value="{{ b.isQuote }}" hint-placeholder-val="{{ false }}">
+              <figure style="margin:clamp(10px,2vw,22px) 0;display:flex;flex-direction:column;gap:12px;border-top:1px solid #e2dacb;border-bottom:1px solid #e2dacb;padding:clamp(20px,2.6vw,30px) 0">
+                <blockquote style="margin:0;font-family:Lora,serif;font-style:italic;font-size:clamp(23px,2.8vw,30px);line-height:1.45;color:#2b4034;text-wrap:balance">“{{ b.text }}”</blockquote>
+                <sc-if value="{{ b.hasBy }}" hint-placeholder-val="{{ false }}"><figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#b5646a">{{ b.by }}</figcaption></sc-if>
+              </figure>
+            </sc-if>
+            <sc-if value="{{ b.isQA }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;flex-direction:column;gap:12px;background:#f3f0e8;border-radius:14px;padding:clamp(20px,2.6vw,28px)">
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#9b9186">Pergunta</span>
+                <p style="margin:0;font-family:Lora,serif;font-weight:500;font-size:clamp(19px,2vw,21px);line-height:1.45;color:#22302a;text-wrap:pretty">{{ b.q }}</p>
+                <sc-for list="{{ b.paras }}" as="para" hint-placeholder-count="0">
+                  <p style="margin:0;font-size:17px;line-height:1.85;color:#3f4a44;text-wrap:pretty">{{ para }}</p>
+                </sc-for>
+              </div>
+            </sc-if>
+            <sc-if value="{{ b.isImage }}" hint-placeholder-val="{{ false }}">
+              <figure style="margin:8px 0;display:flex;flex-direction:column;gap:8px"><img src="{{ b.src }}" alt="{{ b.caption }}" style="width:100%;height:auto;display:block;border-radius:14px"><figcaption style="font-size:13px;color:#8a7a63">{{ b.caption }}</figcaption></figure>
+            </sc-if>
+          </div>
+        </sc-for>
+      </section>
+    </sc-if>
+  </sc-for>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:900,&quot;height&quot;:400},&quot;content&quot;:{&quot;editor&quot;:null,&quot;default&quot;:{},&quot;tsType&quot;:&quot;{ video?, chapters: [{ title, intro?, blocks: [{type:'text',text}|{type:'quote',text,by?}|{type:'qa',q,a}|{type:'image',src,caption}] }] }&quot;},&quot;anchorPrefix&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;x&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;pronoun&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;do especialista&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const c = this.props.content || {};
+    const v = c.video || null;
+    const prefix = "cv-" + (this.props.anchorPrefix || "x") + "-";
+    const raw = c.chapters || [];
+    const chapters = raw.map((ch, i) => {
+      const blocks = (ch.blocks || []).map(b => {
+        const paras = t => t ? String(t).split(/\n\s*\n/) : [];
+        return {
+          isText: b.type === "text", isQuote: b.type === "quote", isQA: b.type === "qa", isImage: b.type === "image",
+          paras: paras(b.type === "qa" ? b.a : b.text), text: b.text || "", by: b.by || "", hasBy: !!b.by,
+          q: b.q || "", src: b.src || "", caption: b.caption || ""
+        };
+      });
+      const id = prefix + (i + 1);
+      return {
+        id, num: String(i + 1).padStart(2, "0"), title: ch.title,
+        intro: ch.intro || "", hasIntro: !!ch.intro, blocks,
+        hasContent: !!ch.intro || blocks.length > 0, notLast: i < raw.length - 1,
+        jump: (e) => {
+          if (e && e.preventDefault) e.preventDefault();
+          const el = document.getElementById(id);
+          if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 90, behavior: "smooth" });
+        }
+      };
+    });
+    const who = this.props.pronoun || "do especialista";
+    return {
+      chapters,
+      prep: !chapters.some(x => x.hasContent),
+      prepText: this.props.prepText || ("Esta conversa será publicada após a revisão e aprovação " + who + "."),
+      prepLabel: this.props.prepLabel || "Entrevista em preparação",
+      navLabel: this.props.navLabel || "Nesta conversa",
+      showNav: this.props.hideNav !== "true" && this.props.hideNav !== true,
+      hasVideo: !!v, videoUrl: v ? v.url : "#", videoTitle: v ? v.title : "",
+      videoDuration: v ? v.duration : "", hasDuration: !!(v && v.duration),
+      thumbBg: v && v.thumb ? "url('" + v.thumb + "')" : "none"
+    };
+  }
+}
+</script>
+</body>
+</html>
