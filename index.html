@@ -1372,10 +1372,114 @@
                   <sc-if value="{{ cfSent }}" hint-placeholder-val="{{ false }}"><span style="font-size:14.5px;color:#3f5a4a">Mensagem enviada. Obrigado pelo contato — responderemos assim que possível.</span></sc-if>
                   <sc-if value="{{ cfError }}" hint-placeholder-val="{{ false }}"><span style="font-size:14.5px;color:#a24f57">Não foi possível enviar agora. Tente novamente ou escreva para contato@bencuidados.com.</span></sc-if>
                 </div>
+                <p style="margin:0;font-size:13.5px;line-height:1.6;color:#6f7a72;text-wrap:pretty">Seus dados são usados apenas para responder sua mensagem. Saiba mais na nossa <span onClick="{{ goPrivacidade }}" style="color:#3f5a4a;text-decoration:underline;text-underline-offset:3px;cursor:pointer" style-hover="color:#b5646a">Política de Privacidade</span>.</p>
               </form>
             </div>
           </div>
         </section>
+      </article>
+    </sc-if>
+
+    <!-- ============ POLÍTICA DE PRIVACIDADE ============ -->
+    <sc-if value="{{ isPrivacidade }}" hint-placeholder-val="{{ false }}">
+      <article style="background:#faf7f2" data-screen-label="Política de Privacidade">
+        <header style="background:#2f4538">
+          <div style="max-width:860px;margin:0 auto;padding:clamp(40px,5vw,64px) clamp(20px,5vw,40px);display:flex;flex-direction:column;gap:14px">
+            <span style="display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#c9d3c4">Privacidade e LGPD</span>
+            <h1 style="font-family:Lora,serif;font-weight:500;font-size:clamp(30px,4vw,46px);line-height:1.1;margin:0;color:#ffffff;text-wrap:balance">Política de Privacidade</h1>
+            <p style="margin:0;font-size:clamp(16px,1.6vw,18px);line-height:1.65;color:#e3e8df;text-wrap:pretty;max-width:52ch">Como o Ben Cuidados trata os seus dados pessoais, de acordo com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018).</p>
+            <span style="font-size:13.5px;color:#c9d3c4">Última atualização: 3 de outubro de 2026</span>
+          </div>
+        </header>
+        <div style="max-width:860px;margin:0 auto;padding:clamp(32px,4vw,52px) clamp(20px,5vw,40px) clamp(52px,6vw,88px);box-sizing:border-box;display:flex;flex-direction:column;gap:clamp(26px,3vw,36px)">
+              <p style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.75;color:#3f4a44;text-wrap:pretty;margin:0;text-align:{{ tAlign }}">O Ben Cuidados é um projeto pessoal, sem fins lucrativos, criado para apoiar tutores de cães com doença da válvula mitral. Levamos a sua privacidade a sério: coletamos o mínimo de dados possível e apenas para as finalidades descritas abaixo.</p>
+            <section style="display:flex;flex-direction:column;gap:12px;padding-top:clamp(26px,3vw,36px);border-top:1px solid #e6dfd1">
+              <h2 style="font-family:Lora,serif;font-weight:500;font-size:clamp(21px,2.2vw,25px);line-height:1.25;margin:0;color:#22302a">1. Quem é a responsável pelos seus dados</h2>
+              <p style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.75;color:#3f4a44;text-wrap:pretty;margin:0;text-align:{{ tAlign }}">A controladora dos dados pessoais tratados neste site é <strong style="font-weight:600;color:#22302a">Gisele Soares</strong>, pessoa física responsável pelo projeto Ben Cuidados. Para qualquer assunto relacionado aos seus dados, escreva para <a href="mailto:contato@bencuidados.com" style="color:#3f5a4a;text-decoration:underline;text-underline-offset:3px">contato@bencuidados.com</a>.</p>
+            </section>
+
+            <section style="display:flex;flex-direction:column;gap:12px;padding-top:clamp(26px,3vw,36px);border-top:1px solid #e6dfd1">
+              <h2 style="font-family:Lora,serif;font-weight:500;font-size:clamp(21px,2.2vw,25px);line-height:1.25;margin:0;color:#22302a">2. Quais dados coletamos</h2>
+              <p style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.75;color:#3f4a44;text-wrap:pretty;margin:0;text-align:{{ tAlign }}"><strong style="font-weight:600;color:#22302a">Dados que você nos envia:</strong> ao usar o formulário de contato da página Nossa Comunidade, ou ao nos escrever por e-mail, recebemos seu nome, e-mail, o assunto e o conteúdo da mensagem.</p>
+              <p style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.75;color:#3f4a44;text-wrap:pretty;margin:0;text-align:{{ tAlign }}"><strong style="font-weight:600;color:#22302a">Dados técnicos de navegação:</strong> como qualquer site, ao ser acessado o seu navegador se comunica com serviços que mantêm o site no ar (hospedagem, fontes e, quando houver, vídeos). Esses serviços podem registrar dados técnicos como endereço IP, tipo de navegador e data e hora do acesso. O Ben Cuidados não usa ferramentas de análise de audiência, publicidade ou rastreamento.</p>
+            </section>
+
+            <section style="display:flex;flex-direction:column;gap:12px;padding-top:clamp(26px,3vw,36px);border-top:1px solid #e6dfd1">
+              <h2 style="font-family:Lora,serif;font-weight:500;font-size:clamp(21px,2.2vw,25px);line-height:1.25;margin:0;color:#22302a">3. Para que usamos seus dados</h2>
+              <ul style="margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px">
+                <li style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.7;color:#3f4a44;text-wrap:pretty">Ler e responder as mensagens que você nos envia;</li>
+                <li style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.7;color:#3f4a44;text-wrap:pretty">Manter um histórico mínimo das conversas, para dar continuidade ao atendimento;</li>
+                <li style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.7;color:#3f4a44;text-wrap:pretty">Manter o site funcionando com segurança.</li>
+              </ul>
+              <p style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.75;color:#3f4a44;text-wrap:pretty;margin:0;text-align:{{ tAlign }}">Não vendemos, alugamos nem usamos seus dados para enviar propaganda.</p>
+            </section>
+
+            <section style="display:flex;flex-direction:column;gap:12px;padding-top:clamp(26px,3vw,36px);border-top:1px solid #e6dfd1">
+              <h2 style="font-family:Lora,serif;font-weight:500;font-size:clamp(21px,2.2vw,25px);line-height:1.25;margin:0;color:#22302a">4. Base legal</h2>
+              <p style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.75;color:#3f4a44;text-wrap:pretty;margin:0;text-align:{{ tAlign }}">Tratamos os dados do formulário para atender a uma solicitação feita por você, com base no legítimo interesse (art. 7º, IX, da LGPD), sempre respeitando seus direitos e expectativas. Os dados técnicos de navegação são tratados para permitir o funcionamento e a segurança do site.</p>
+            </section>
+
+            <section style="display:flex;flex-direction:column;gap:12px;padding-top:clamp(26px,3vw,36px);border-top:1px solid #e6dfd1">
+              <h2 style="font-family:Lora,serif;font-weight:500;font-size:clamp(21px,2.2vw,25px);line-height:1.25;margin:0;color:#22302a">5. Com quem compartilhamos</h2>
+              <p style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.75;color:#3f4a44;text-wrap:pretty;margin:0;text-align:{{ tAlign }}">Para que o site funcione, utilizamos alguns serviços de terceiros, que podem ter acesso a dados pessoais apenas na medida necessária:</p>
+              <ul style="margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px">
+                <li style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.7;color:#3f4a44;text-wrap:pretty"><strong style="font-weight:600;color:#22302a">FormSubmit</strong> — entrega as mensagens do formulário no nosso e-mail;</li>
+                <li style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.7;color:#3f4a44;text-wrap:pretty"><strong style="font-weight:600;color:#22302a">Provedor de e-mail</strong> — onde as mensagens são recebidas e respondidas;</li>
+                <li style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.7;color:#3f4a44;text-wrap:pretty"><strong style="font-weight:600;color:#22302a">GitHub Pages</strong> — hospedagem do site;</li>
+                <li style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.7;color:#3f4a44;text-wrap:pretty"><strong style="font-weight:600;color:#22302a">Google Fonts</strong> — fornece as fontes usadas nos textos;</li>
+                <li style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.7;color:#3f4a44;text-wrap:pretty"><strong style="font-weight:600;color:#22302a">YouTube (Google)</strong> — quando o site exibir vídeos, eles são incorporados no modo de privacidade reforçada, e o YouTube só registra dados quando você dá play;</li>
+                <li style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.7;color:#3f4a44;text-wrap:pretty"><strong style="font-weight:600;color:#22302a">Facebook</strong> — ao clicar no link do grupo, você passa a navegar no Facebook, sujeito à política de privacidade dele.</li>
+              </ul>
+              <p style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.75;color:#3f4a44;text-wrap:pretty;margin:0;text-align:{{ tAlign }}">Também poderemos compartilhar dados se houver obrigação legal ou ordem de autoridade competente.</p>
+            </section>
+
+            <section style="display:flex;flex-direction:column;gap:12px;padding-top:clamp(26px,3vw,36px);border-top:1px solid #e6dfd1">
+              <h2 style="font-family:Lora,serif;font-weight:500;font-size:clamp(21px,2.2vw,25px);line-height:1.25;margin:0;color:#22302a">6. Transferência internacional</h2>
+              <p style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.75;color:#3f4a44;text-wrap:pretty;margin:0;text-align:{{ tAlign }}">Alguns desses serviços armazenam dados em servidores fora do Brasil, principalmente nos Estados Unidos. Nesses casos, a transferência ocorre conforme o art. 33 da LGPD, com fornecedores que adotam práticas reconhecidas de proteção de dados.</p>
+            </section>
+
+            <section style="display:flex;flex-direction:column;gap:12px;padding-top:clamp(26px,3vw,36px);border-top:1px solid #e6dfd1">
+              <h2 style="font-family:Lora,serif;font-weight:500;font-size:clamp(21px,2.2vw,25px);line-height:1.25;margin:0;color:#22302a">7. Cookies</h2>
+              <p style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.75;color:#3f4a44;text-wrap:pretty;margin:0;text-align:{{ tAlign }}">O Ben Cuidados não utiliza cookies próprios de rastreamento ou publicidade. Serviços de terceiros, como o YouTube, podem usar cookies quando você interage com eles. Você pode bloquear ou apagar cookies nas configurações do seu navegador.</p>
+            </section>
+
+            <section style="display:flex;flex-direction:column;gap:12px;padding-top:clamp(26px,3vw,36px);border-top:1px solid #e6dfd1">
+              <h2 style="font-family:Lora,serif;font-weight:500;font-size:clamp(21px,2.2vw,25px);line-height:1.25;margin:0;color:#22302a">8. Por quanto tempo guardamos</h2>
+              <p style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.75;color:#3f4a44;text-wrap:pretty;margin:0;text-align:{{ tAlign }}">As mensagens recebidas são guardadas por até <strong style="font-weight:600;color:#22302a">1 ano</strong> após o último contato e depois excluídas, salvo se você pedir a exclusão antes ou se houver obrigação legal de mantê-las.</p>
+            </section>
+
+            <section style="display:flex;flex-direction:column;gap:12px;padding-top:clamp(26px,3vw,36px);border-top:1px solid #e6dfd1">
+              <h2 style="font-family:Lora,serif;font-weight:500;font-size:clamp(21px,2.2vw,25px);line-height:1.25;margin:0;color:#22302a">9. Seus direitos</h2>
+              <p style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.75;color:#3f4a44;text-wrap:pretty;margin:0;text-align:{{ tAlign }}">Pela LGPD (art. 18), você pode, a qualquer momento e gratuitamente:</p>
+              <ul style="margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px">
+                <li style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.7;color:#3f4a44;text-wrap:pretty">Confirmar se tratamos seus dados e ter acesso a eles;</li>
+                <li style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.7;color:#3f4a44;text-wrap:pretty">Corrigir dados incompletos, inexatos ou desatualizados;</li>
+                <li style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.7;color:#3f4a44;text-wrap:pretty">Pedir a anonimização, o bloqueio ou a exclusão de dados desnecessários;</li>
+                <li style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.7;color:#3f4a44;text-wrap:pretty">Pedir a portabilidade dos seus dados;</li>
+                <li style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.7;color:#3f4a44;text-wrap:pretty">Pedir a exclusão dos dados tratados;</li>
+                <li style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.7;color:#3f4a44;text-wrap:pretty">Saber com quem seus dados foram compartilhados;</li>
+                <li style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.7;color:#3f4a44;text-wrap:pretty">Opor-se a um tratamento que considere irregular.</li>
+              </ul>
+              <p style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.75;color:#3f4a44;text-wrap:pretty;margin:0;text-align:{{ tAlign }}">Para exercer qualquer um desses direitos, escreva para <a href="mailto:contato@bencuidados.com" style="color:#3f5a4a;text-decoration:underline;text-underline-offset:3px">contato@bencuidados.com</a>. Responderemos em até 15 dias. Você também pode apresentar reclamação à Autoridade Nacional de Proteção de Dados (ANPD), em <a href="https://www.gov.br/anpd" target="_blank" rel="noopener noreferrer" style="color:#3f5a4a;text-decoration:underline;text-underline-offset:3px">gov.br/anpd</a>.</p>
+            </section>
+
+            <section style="display:flex;flex-direction:column;gap:12px;padding-top:clamp(26px,3vw,36px);border-top:1px solid #e6dfd1">
+              <h2 style="font-family:Lora,serif;font-weight:500;font-size:clamp(21px,2.2vw,25px);line-height:1.25;margin:0;color:#22302a">10. Informações sensíveis e menores de idade</h2>
+              <p style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.75;color:#3f4a44;text-wrap:pretty;margin:0;text-align:{{ tAlign }}">Pedimos que você não envie pelo formulário informações sensíveis sobre pessoas, como dados de saúde, religião ou documentos. Informações sobre a saúde do seu cão podem ser compartilhadas normalmente.</p>
+              <p style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.75;color:#3f4a44;text-wrap:pretty;margin:0;text-align:{{ tAlign }}">Este site não é direcionado a menores de 18 anos, e não coletamos intencionalmente dados de crianças ou adolescentes.</p>
+            </section>
+
+            <section style="display:flex;flex-direction:column;gap:12px;padding-top:clamp(26px,3vw,36px);border-top:1px solid #e6dfd1">
+              <h2 style="font-family:Lora,serif;font-weight:500;font-size:clamp(21px,2.2vw,25px);line-height:1.25;margin:0;color:#22302a">11. Segurança</h2>
+              <p style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.75;color:#3f4a44;text-wrap:pretty;margin:0;text-align:{{ tAlign }}">O site é acessado por conexão segura (HTTPS), e o acesso às mensagens recebidas é restrito à responsável pelo projeto. Nenhum sistema é totalmente imune a falhas, mas adotamos cuidados razoáveis para proteger seus dados.</p>
+            </section>
+
+            <section style="display:flex;flex-direction:column;gap:12px;padding-top:clamp(26px,3vw,36px);border-top:1px solid #e6dfd1">
+              <h2 style="font-family:Lora,serif;font-weight:500;font-size:clamp(21px,2.2vw,25px);line-height:1.25;margin:0;color:#22302a">12. Alterações nesta política</h2>
+              <p style="font-size:clamp(16px,1.5vw,17.5px);line-height:1.75;color:#3f4a44;text-wrap:pretty;margin:0;text-align:{{ tAlign }}">Esta política pode ser atualizada, por exemplo quando o site ganhar novos recursos. A data da última atualização fica sempre indicada no topo desta página.</p>
+            </section>
+
+        </div>
       </article>
     </sc-if>
 
@@ -1749,9 +1853,17 @@
       </div>
     </div>
     <div style="border-top:1px solid #3b473c">
-      <div style="max-width:1240px;margin:0 auto;box-sizing:border-box;padding:16px clamp(20px,5vw,64px);display:flex;flex-wrap:wrap;gap:8px 32px;align-items:baseline;justify-content:space-between">
-        <p style="margin:0;flex:1 1 480px;min-width:0;font-size:12.5px;line-height:1.6;color:#95a092;text-wrap:pretty;text-align:{{ tAlign }}"><strong style="font-weight:600;color:#b4bdb1">Aviso:</strong> as informações deste site têm fins exclusivamente educativos e informativos e não substituem a orientação de um médico-veterinário ou de outro profissional de saúde qualificado. Recomendamos que você faça sua própria pesquisa e entre em contato diretamente com cada clínica que realiza a cirurgia de reparo da válvula mitral para obter as informações mais atualizadas.</p>
-        <span style="font-size:12.5px;color:#7c877b">© 2026 Projeto Ben Cuidados. Todos os direitos reservados.</span>
+      <div style="max-width:1240px;margin:0 auto;box-sizing:border-box;padding:20px clamp(20px,5vw,64px) 0">
+        <p style="margin:0;max-width:110ch;font-size:12.5px;line-height:1.65;color:#95a092;text-wrap:pretty;text-align:{{ tAlign }}"><strong style="font-weight:600;color:#b4bdb1">Aviso:</strong> as informações deste site têm fins exclusivamente educativos e informativos e não substituem a orientação de um médico-veterinário ou de outro profissional de saúde qualificado. Recomendamos que você faça sua própria pesquisa e entre em contato diretamente com cada clínica que realiza a cirurgia de reparo da válvula mitral para obter as informações mais atualizadas.</p>
+      </div>
+      <div style="max-width:1240px;margin:0 auto;box-sizing:border-box;padding:16px clamp(20px,5vw,64px) 22px">
+        <div style="border-top:1px solid #3b473c;padding-top:16px;display:flex;flex-wrap:wrap;gap:10px 28px;align-items:center;justify-content:space-between">
+          <span style="font-size:12.5px;color:#7c877b">© 2026 Projeto Ben Cuidados. Todos os direitos reservados.</span>
+          <div style="display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center">
+            <span onClick="{{ goPrivacidade }}" style="font-size:12.5px;color:#b4bdb1;cursor:pointer" style-hover="color:#ffffff">Política de Privacidade</span>
+            <a href="mailto:contato@bencuidados.com" style="font-size:12.5px;color:#b4bdb1;text-decoration:none" style-hover="color:#ffffff">Contato</a>
+          </div>
+        </div>
       </div>
     </div>
   </footer>
@@ -1759,7 +1871,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;protectContent&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Publicação&quot;},&quot;facebookUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://www.facebook.com/groups/bencuidados/&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Comunidade&quot;},&quot;contactEmail&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;contato@bencuidados.com&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Comunidade&quot;},&quot;storiesPreviewCount&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:3,&quot;min&quot;:1,&quot;max&quot;:3,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Home&quot;},&quot;japaoUpdatedAt&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;setembro de 2026&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Caminho até o Japão&quot;},&quot;jasmineUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://jasmine-vet.co.jp/english&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Caminho até o Japão&quot;},&quot;startPage&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;coracao&quot;,&quot;reparo&quot;,&quot;vclamp&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Página&quot;},&quot;forceMobile&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Edição&quot;}}">
 class Component extends DCLogic {
-  state = { page: (typeof location !== "undefined" && ["home","sobre","coracao","reparo","vclamp","videos","cirurgia","historias","hist-theo","hist-paola","comunidade"].includes(location.hash.slice(1)) ? location.hash.slice(1) : null) || this.props.startPage || "home", japaoPage: "jasmine", japaoMenu: false, openStory: null, openFaq: null, openCare: null, videoFilter: "Todos", narrow: typeof window !== "undefined" && window.innerWidth < 680, navCompact: typeof window !== "undefined" && window.innerWidth < 1024, mobileMenu: false };
+  state = { page: (typeof location !== "undefined" && ["home","sobre","coracao","reparo","vclamp","videos","cirurgia","historias","hist-theo","hist-paola","comunidade","privacidade"].includes(location.hash.slice(1)) ? location.hash.slice(1) : null) || this.props.startPage || "home", japaoPage: "jasmine", japaoMenu: false, openStory: null, openFaq: null, openCare: null, videoFilter: "Todos", narrow: typeof window !== "undefined" && window.innerWidth < 680, navCompact: typeof window !== "undefined" && window.innerWidth < 1024, mobileMenu: false };
 
   isLiveSite() {
     try { if (window.self !== window.top) return false; } catch (e) { return false; }
@@ -1861,7 +1973,7 @@ class Component extends DCLogic {
   }
   pageFromHash() {
     const h = (typeof location !== "undefined" ? location.hash.slice(1) : "") || "";
-    return ["home","sobre","coracao","reparo","vclamp","videos","cirurgia","historias","hist-theo","hist-paola","comunidade"].includes(h) ? h : null;
+    return ["home","sobre","coracao","reparo","vclamp","videos","cirurgia","historias","hist-theo","hist-paola","comunidade","privacidade"].includes(h) ? h : null;
   }
 
   renderVals() {
@@ -2288,7 +2400,7 @@ class Component extends DCLogic {
       ],
       mitralNavigate: (p) => p === "cirurgia" ? this.goJapao("jasmine") : this.go(p),
       isVideos: page === "videos", isVoz: page === "voz", isHistTheo: page === "hist-theo", isHistPaola: page === "hist-paola", isCirurgia: page === "cirurgia",
-      isHistorias: page === "historias", isComunidade: page === "comunidade",
+      isHistorias: page === "historias", isComunidade: page === "comunidade", isPrivacidade: page === "privacidade", goPrivacidade: () => this.go("privacidade"),
       goHome: () => this.go("home"), goSobre: () => this.go("sobre"), goCoracao: () => this.go("coracao"),
       goVideos: () => this.go("videos"), goHistorias: () => this.go("historias"),
       goCirurgia: () => this.goJapao("jasmine"),
